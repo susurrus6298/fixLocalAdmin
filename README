@@ -1,0 +1,16 @@
+Intune remediation script.
+
+This script removes the currently logged-in user from the device's local Administrators
+group, if found.
+
+This script is intended to either be run on-demand from the device page in Intune, or
+assigned to a device group and run on a schedule.
+
+detection.ps1 checks for the presence of the current user in the local admin group.
+It also checks that the device running it is on a specific domain. Replace the <> text.
+
+remediation.ps1 removes the user from the group. Optionally, it adds a specific user or
+group to the local Administrator group before removing the current user from it. Optionally,
+it triggers a reboot after running. (substitute for logoff if desired)
+
+Run remediation script with the settings: run in 64-bit shell and run in user's context.
